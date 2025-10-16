@@ -1,3 +1,4 @@
+import type {FC} from "react";
 
 interface UserShape  {
     name: string,
@@ -5,7 +6,7 @@ interface UserShape  {
     isStudent: boolean
 }
 
-function User({name, age, isStudent}: UserShape ) {
+const User : FC<UserShape> = ({name, age, isStudent}: UserShape )=> {
     return (
         <div>
             <h2>{name}</h2>
