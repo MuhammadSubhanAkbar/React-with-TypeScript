@@ -1,6 +1,5 @@
 import UserInfo from "./components/UserInfo.tsx";
-import Adminstrotor from "./components/Adminstrotor.tsx";
-import {type Info, AdminInfoType} from './Type.ts';
+import {type Info} from './Type.ts';
 
 function App(){
 
@@ -10,21 +9,12 @@ function App(){
         email:"Muhammad@gmail.com"
     }
 
-    const admin : AdminInfoType = {
-        id:2,
-        name:"Administrator",
-        email: "Admin@gmai.com",
-        role:"Admin",
-        lastLogin: new Date()
-    }
+
 
     return (
         <div>
             <UserInfo
                 user = {user}
-            />
-            <Adminstrotor
-                admin  = {admin}
             />
         </div>
     )
