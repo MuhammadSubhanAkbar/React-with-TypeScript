@@ -1,10 +1,10 @@
-import Form from './components/Form.tsx'
+import ContactForm from "./ContactForm.tsx";
 
 function App() {
 
   return (
     <>
-     <Form/>
+        <ContactForm/>
     </>
   )
 }
