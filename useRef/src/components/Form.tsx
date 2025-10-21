@@ -13,6 +13,10 @@ function Form() {
         password: "",
     });
 
+    const [isVisible, setIsVisible] = useState<boolean>(false);
+
+
+
     const nameRef = useRef<HTMLInputElement>(null);
     const emailRef = useRef<HTMLInputElement>(null);
     const passwordRef = useRef<HTMLInputElement>(null);
@@ -32,11 +36,21 @@ function Form() {
         });
     };
 
+    const toggleVisibility = (event: React.MouseEvent<HTMLButtonElement>) => {
+        event.preventDefault(); // Prevent form submission
+        setIsVisible(!isVisible);
+    }
+
     return (
         <form onSubmit={handleSubmit}>
             <input type="text" placeholder="Name" ref={nameRef} />
             <input type="email" placeholder="Email" ref={emailRef} />
-            <input type="password" placeholder="Password" ref={passwordRef} />
+            <input type={isVisible? "password" : "text"} placeholder="Password" ref={passwordRef} />
+            <button
+                onClick={toggleVisibility}>
+                {isVisible? "See" : "Unsee"}
+            </button>
+            <br/>
 
             <button type="submit">Submit</button>
 
@@ -49,6 +63,7 @@ function Form() {
                 </h2>
                 <h2>
                     <strong>Password:</strong> {submitted.password}
+
                 </h2>
             </section>
         </form>
